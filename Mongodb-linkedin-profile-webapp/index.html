@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Profile Form</title>
+</head>
+<body>
+
+    <h2>LinkedIn Profile Data Form</h2>
+
+    <form id="profileForm" method="POST" action="/submit">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter LinkedIn Username" required><br><br>
+
+        <label for="linkedinURL">LinkedIn URL: </label>
+        <input type="url" id="linkedinURL" name="linkedinURL" required><br><br>
+
+        <label for="position">Position:</label>
+        <input type="text" id="position" name="position" placeholder="Enter job position" required><br><br>
+
+        <label for="company">Company:</label>
+        <input type="text" id="company" name="company" placeholder="Enter company name" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        // Function to generate random LinkedIn URL
+        function generateRandomLinkedInURL() {
+            const randomId = Math.random().toString(36).substring(2, 15);
+            return `https://linkedin.com/in/${randomId}`;
+        }
+
+        // Set random LinkedIn URL when the page loads
+        document.getElementById('linkedinURL').value = generateRandomLinkedInURL();
+    </script>
+
+</body>
+</html>
